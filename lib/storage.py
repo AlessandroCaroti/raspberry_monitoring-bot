@@ -3,7 +3,7 @@ import logging
 from typing import List, Union, Callable
 
 import config.config as config
-from lib.types import Command, SSHCommand, Machine, User
+from lib.types import User
 
 # Compatible machine file version with this code
 from lib.utils import is_not_blank

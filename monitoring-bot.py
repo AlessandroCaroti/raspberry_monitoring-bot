@@ -17,8 +17,6 @@ import requests
 import version
 import config.config as config
 import lib.permission as perm
-from lib.storage import (read_machines_file, read_commands_file)
-from lib.types import Machine
 from lib.utils import (find_by_name)
 import time
 
