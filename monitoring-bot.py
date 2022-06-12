@@ -68,10 +68,10 @@ def main() -> None:
     while True:
         time.sleep(5)
         print("\n-------------------------------------------\n\tGPIZERO")
-        print(cpu.temperature)
-        print(la.load_average)
-        print(la.value)
-        print(str(int(LoadAverage(minutes=1).load_average*100))+"%")
+        print('CPU temp: ', str(cpu.temperature))
+        print('CPU load:', str(la.load_average))
+        print('CPU load_2:', str(la.value))
+        print('CPU load_3:',str(int(LoadAverage(minutes=1).load_average*100))+"%")
         print("\n-------------------------------------------\n\tPSUTILS")
         print('The CPU usage is: ', psutil.cpu_percent(4))
         
