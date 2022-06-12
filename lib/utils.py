@@ -4,7 +4,7 @@ import subprocess
 from typing import List, Union
 
 import config.config as config
-from lib.types import Machine, Command, User
+from lib.types import User
 
 
 def is_valid_name(name: str) -> bool:
