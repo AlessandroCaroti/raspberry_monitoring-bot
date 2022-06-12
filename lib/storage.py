@@ -24,8 +24,8 @@ def read_users_file(path: str) -> List[User]:
     return __read_storage_file(path, __line_to_user, USER_FILE_VERSION)
 
 
-def __read_storage_file(path: str, line_converter: Callable[[str], Union[User, Machine, Command]],
-                        filespec_version: str) -> Union[List[Union[User, Machine, Command]], None]:
+def __read_storage_file(path: str, line_converter: Callable[[str], User],
+                        filespec_version: str) -> Union[List[User], None]:
     objects = []
     logger.info('Reading stored entries from "{p}"'.format(p=path))
     # Warning: file contents will not be validated
