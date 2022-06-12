@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 import logging
 import re
@@ -67,21 +66,23 @@ def main() -> None:
     la = LoadAverage()
     while True:
         time.sleep(5)
-        print("\n-------------------------------------------\n\tGPIZERO")
-        print('CPU temp: ', str(cpu.temperature))
-        print('CPU load:', str(la.load_average))
-        print('CPU load_2:', str(la.value))
-        print('CPU load_3:',str(int(LoadAverage(minutes=1).load_average*100))+"%")
-        print("\n-------------------------------------------\n\tPSUTILS")
+        print("\tGPIZERO")
+        print('CPU temp: '+ str(cpu.temperature))
+        print('CPU load:'+ str(la.load_average))
+        print('CPU load_2:'+ str(la.value))
+        print('CPU load_3:'+str(int(LoadAverage(minutes=1).load_average*100))+"%")
+        print("\n----------------------------------------------------------\tPSUTILS")
         print('The CPU usage is: ', psutil.cpu_percent(4))
         
         # Getting % usage of virtual_memory ( 3rd field)
-        print('RAM memory % used:', psutil.virtual_memory()[2])
+        print(f'RAM  used: {psutil.virtual_memory()[2]}%')
         
         load1, load5, load15 = psutil.getloadavg()
         cpu_usage = (load15/os.cpu_count()) * 100
-        print("The CPU usage is : ", cpu_usage)
-        print("=====================================================\n\n")
+        print("The CPU usage is: ", cpu_usage)
+        
+        print(psutil.sensors_temperatures())
+        print("\n==========================================================")
 
         
 
