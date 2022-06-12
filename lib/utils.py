@@ -12,7 +12,7 @@ def is_valid_name(name: str) -> bool:
     return not re.search(pattern, name)
 
 
-def get_highest_id(elements: List[Union[Machine, Command, User]]) -> int:
+def get_highest_id(elements: List[User]) -> int:
     highest = -1
     for m in elements:
         if m.id > highest:
@@ -24,7 +24,7 @@ def is_not_blank(string: str) -> bool:
     return bool(string and string.strip())
 
 
-def find_by_name(objects: List[Union[Machine, Command, User]], name: str) -> Union[Machine, Command, User, None]:
+def find_by_name(objects: List[User], name: str) -> Union[User, None]:
     for o in objects:
         if o.name == name:
             return o
