@@ -1,0 +1,19 @@
+from enum import Enum
+from typing import List
+
+class Machine:
+    def __init__(self, mid: int, name: str, addr: str, host: str = None, port: int = 22, user: str = None):
+        self.id: int = mid
+        self.name: str = name
+        self.addr: str = addr
+        self.host: str = host
+        self.port: int = port
+        self.user: str = user
+
+
+class User:
+    def __init__(self, uid: int, name: str, telegram_id: str, permissions: List[str]):
+        self.id: int = uid
+        self.name: str = name
+        self.telegram_id: str = str(telegram_id)
+        self.permissions: List[str] = permissions
